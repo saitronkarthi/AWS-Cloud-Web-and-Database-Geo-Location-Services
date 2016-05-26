@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>K Nearest Neighbours </title>
+  </head>
+<body>
+<h2><u>CSE6331-Cloud Computing Assignment4 AWS RDS & EC2(city neighbours by K neigbours)</u></h2>
+<a href="/">Go to N Kilometers link</a>
+<br>
+<br>
+<form method="post" action="/neighbours" enctype="multipart/form-data">
+1.City:(ex:Arlington)<input type="text" name="city" id="city">
+    2.Country code:(ex:us)<input type="text" name="country" id="country">
+    3.Region:(ex:TX)<input type="text" name="region" id="region">
+<br>
+<br>
+     K neighbours:<input type="text" name="K" >
+     <input type="submit" value="Query citydb for K Neigbours">
+     <br>
+<br>
+<br>
+Returned from :{{ status }}
+<br>
+Query time:{{ queriedtime }}
+<br>
+
+Total request to response time:{{ totaltime }}
+<br>
+    {% for result in results %}
+    {{ result }}
+        <br/>
+    {% endfor %}
+
+<label id="status" style="margin-left:100px;color:red;"></label>
+</form>
+</body>
+</html>
+
